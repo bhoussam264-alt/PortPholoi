@@ -46,7 +46,7 @@ const projects = [
       "Une application de commande et de livraison de repas, avec menu, panier et suivi des commandes en temps réel.",
     stack: ["React", "PHP", "MySQL"],
     href: "https://resto-hossam.vercel.app",
-    image: "/gourmet.png",
+    image: "/Screenshot 2026-11-25 165542.png",
     type: "food",
     index: "03",
     marker: "🍔",
