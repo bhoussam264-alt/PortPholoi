@@ -1,0 +1,38 @@
+HOSSAM BAKKAR
+Développeur Full Stack
+
+El Jadida, Maroc
+E-mail : bhoussam264@gmail.com
+WhatsApp : 0635065313
+
+PROFIL
+Développeur Full Stack à El Jadida, au Maroc. Je transforme des idées en
+applications web complètes, de la conception au déploiement. Disponible pour
+un stage ou des missions freelance.
+
+COMPÉTENCES
+React | Vite | Tailwind CSS | JavaScript | Laravel | PHP | MySQL | API REST
+Bootstrap | Git / GitHub | Figma
+
+PROJETS
+
+DarBooking — Réservation de logements
+Plateforme marocaine de réservation avec recherche par ville et dates,
+réservation en deux clics et messagerie intégrée. Commission de 10 %.
+Exemple : 5 nuits × 400 DH = 2 000 DH ; 1 800 DH pour le propriétaire.
+Technologies : React, Laravel, MySQL.
+
+Gourmet Express — Livraison de repas
+Application de commande et livraison avec menu, panier et suivi des commandes.
+Technologies : React, PHP, MySQL.
+Démonstration : https://resto-hossam.vercel.app
+
+ComptaLink — Gestion comptable
+Gestion de factures, clients et dépenses pour les petites entreprises
+marocaines. Tableaux de bord et exports.
+Technologies : PHP, Bootstrap, MySQL.
+Démonstration : https://comptalink-olive.vercel.app
+
+Msafer — Voyage au Maroc
+Plateforme de découverte de destinations et de voyages au Maroc.
+Technologies : React, Laravel, API REST.
