@@ -3,69 +3,74 @@ import {
   ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
+  Github,
+  Instagram,
   Layers3,
+  Linkedin,
   Mail,
   Menu,
+  MessageCircle,
+  Moon,
+  Sun,
   X,
 } from "lucide-react";
 
+const texts = {
+  fr: {
+    navHome: "Accueil", navProjects: "Projets", navSkills: "Compétences", navContact: "Contact",
+    navCV: "Mon CV", navHire: "Me recruter",
+    available: "DISPONIBLE POUR UN STAGE OU UN FREELANCE",
+    role: "FULL STACK DEVELOPER · EL JADIDA, MAROC",
+    hello: "Bonjour,", iam: "je suis",
+    desc: "Je transforme vos idées en applications web complètes, de la conception au déploiement.",
+    seeProjects: "Voir mes projets", contactMe: "Me contacter",
+    projectsDone: "Projets réalisés", techs: "Technologies", motivation: "Motivation",
+    projectsLabel: "01 / PROJETS SÉLECTIONNÉS", myProjects: "Mes", projectsDot: "projets.",
+    projectsAside: "DES SOLUTIONS PENSÉES POUR LE MAROC.",
+    skillsLabel: "02 / SAVOIR-FAIRE", mySkills: "Mes", skillsDot: "compétences.",
+    skillsAside: "11 TECHNOLOGIES & OUTILS",
+    contactLabel: "DISPONIBLE POUR VOTRE PROCHAIN PROJET", contactNum: "03 / CONTACT",
+    workTogether: "Travaillons", together: "ensemble ?",
+    contactDesc: "Un projet, une offre de stage ? Parlons-en.",
+    name: "Nom", email: "Email", subject: "Sujet", message: "Message",
+    namePh: "Votre nom", subjectPh: "Ex: Projet site web", messagePh: "Décrivez votre projet...",
+    send: "Envoyer le message", sentMsg: "✅ Merci ! Votre messagerie s'est ouverte, il ne reste qu'à cliquer sur Envoyer.",
+    downloadCV: "⬇️ Télécharger mon CV (PDF)",
+    footerRights: "TOUS DROITS RÉSERVÉS.",
+    findMe: "📬 Retrouvez-moi aussi sur :",
+    availableBox: "📍 Azemmour, Maroc — 🟢 Disponible pour stage / freelance",
+  },
+  en: {
+    navHome: "Home", navProjects: "Projects", navSkills: "Skills", navContact: "Contact",
+    navCV: "My CV", navHire: "Hire me",
+    available: "AVAILABLE FOR INTERNSHIP OR FREELANCE",
+    role: "FULL STACK DEVELOPER · EL JADIDA, MOROCCO",
+    hello: "Hello,", iam: "I'm",
+    desc: "I turn your ideas into complete web applications, from design to deployment.",
+    seeProjects: "See my projects", contactMe: "Contact me",
+    projectsDone: "Projects done", techs: "Technologies", motivation: "Motivation",
+    projectsLabel: "01 / SELECTED PROJECTS", myProjects: "My", projectsDot: "projects.",
+    projectsAside: "SOLUTIONS BUILT FOR MOROCCO.",
+    skillsLabel: "02 / EXPERTISE", mySkills: "My", skillsDot: "skills.",
+    skillsAside: "11 TECHNOLOGIES & TOOLS",
+    contactLabel: "AVAILABLE FOR YOUR NEXT PROJECT", contactNum: "03 / CONTACT",
+    workTogether: "Let's work", together: "together ?",
+    contactDesc: "A project, an internship offer ? Let's talk.",
+    name: "Name", email: "Email", subject: "Subject", message: "Message",
+    namePh: "Your name", subjectPh: "Ex: Website project", messagePh: "Describe your project...",
+    send: "Send message", sentMsg: "✅ Thank you ! Your email app opened, just click Send.",
+    downloadCV: "⬇️ Download my CV (PDF)",
+    footerRights: "ALL RIGHTS RESERVED.",
+    findMe: "📬 Find me also on :",
+    availableBox: "📍 Azemmour, Morocco — 🟢 Available for internship / freelance",
+  }
+};
+
 const projects = [
-  {
-    name: "ComptaLink",
-    title: "ComptaLink — Gestion comptable",
-    category: "La comptabilité, en toute clarté.",
-    description:
-      "La gestion des factures, clients et dépenses des petites entreprises marocaines, avec tableaux de bord et exports.",
-    stack: ["React", "Laravel", "MySQL"],
-    href: "https://comptalink-olive.vercel.app",
-    image: "/combtalink.png",
-    type: "finance",
-    index: "01",
-    marker: "🧾",
-    accent: "blue",
-  },
-  {
-    name: "DarBooking",
-    title: "DarBooking — Réservation de logements",
-    category: "Des séjours, en toute simplicité.",
-    description:
-      "Une plateforme marocaine de réservation avec recherche par ville et dates, réservation en deux clics et messagerie intégrée.",
-    stack: ["React", "Laravel", "MySQL"],
-    detail: "5 nuits × 400 DH = 2 000 DH · Propriétaire : 1 800 DH",
-    href: "",
-    type: "stay",
-    index: "02",
-    marker: "🏠",
-    accent: "green",
-  },
-  {
-    name: "Gourmet Express",
-    title: "Gourmet Express — Livraison de repas",
-    category: "Vos envies, livrées chez vous.",
-    description:
-      "Une application de commande et de livraison de repas, avec menu, panier et suivi des commandes en temps réel.",
-    stack: ["React", "PHP", "MySQL"],
-    href: "https://resto-hossam.vercel.app",
-    image: "/Screenshot 2026-11-25 165542.png",
-    type: "food",
-    index: "03",
-    marker: "🍔",
-    accent: "orange",
-  },
-  {
-    name: "CoVoyageMaroc",
-    title: "Msafer — Voyage au Maroc",
-    category: "Le Maroc comme prochaine destination.",
-    description:
-      "Une plateforme pour explorer les destinations marocaines et organiser des voyages inoubliables.",
-    stack: ["React", "Laravel", "API"],
-    href: "https://maroc-route-partage.base44.app",
-    image: "/Voiyage.png",
-    type: "travel",
-    index: "04",
-    marker: "✈️",
-    accent: "purple",
-  },
+  { name: "ComptaLink", title: "ComptaLink — Gestion comptable", category: "La comptabilité, en toute clarté.", description: "La gestion des factures, clients et dépenses des petites entreprises marocaines, avec tableaux de bord et exports.", stack: ["React", "Laravel", "MySQL"], href: "https://comptalink-olive.vercel.app", image: "/combtalink.png", type: "finance", index: "01", marker: "🧾", accent: "blue" },
+  { name: "DarBooking", title: "DarBooking — Réservation de logements", category: "Des séjours, en toute simplicité.", description: "Une plateforme marocaine de réservation avec recherche par ville et dates, réservation en deux clics et messagerie intégrée.", stack: ["React", "Laravel", "MySQL"], detail: "5 nuits × 400 DH = 2 000 DH · Propriétaire : 1 800 DH", href: "", type: "stay", index: "02", marker: "🏠", accent: "green" },
+  { name: "Gourmet Express", title: "Gourmet Express — Livraison de repas", category: "Vos envies, livrées chez vous.", description: "Une application de commande et de livraison de repas, avec menu, panier et suivi des commandes en temps réel.", stack: ["React", "PHP", "MySQL"], href: "https://resto-hossam.vercel.app", image: "/Screenshot 2026-11-25 165542.png", type: "food", index: "03", marker: "🍔", accent: "orange" },
+  { name: "CoVoyageMaroc", title: "Msafer — Voyage au Maroc", category: "Le Maroc comme prochaine destination.", description: "Une plateforme pour explorer les destinations marocaines et organiser des voyages inoubliables.", stack: ["React", "Laravel", "API"], href: "https://maroc-route-partage.base44.app", image: "/Voiyage.png", type: "travel", index: "04", marker: "✈️", accent: "purple" },
 ];
 
 const skills = [
@@ -83,132 +88,79 @@ const skills = [
 ];
 
 function ProjectPreview({ type, image, name }) {
-  if (image) {
-    return (
-      <div className="preview-window custom-image-window">
-        <img src={image} alt={name} className="custom-project-img" />
-      </div>
-    );
-  }
-  if (type === "finance") {
-    return (
-      <div className="preview-window finance-window">
-        <div className="mock-sidebar">
-          <span className="mock-logo"><span>c.</span> comptalink</span>
-          <span className="mock-side-active">▦ &nbsp; Tableau de bord</span>
-          <span>▤ &nbsp; Factures</span>
-          <span>↔ &nbsp; Dépenses</span>
-          <span>◷ &nbsp; Rapports</span>
-        </div>
-        <div className="mock-main finance-main">
-          <div className="mock-heading">Bonjour, Hossam <span>☀</span></div>
-          <div className="mock-kpis">
-            <div><small>Chiffre d&apos;affaires</small><strong>24 680 DH</strong><i className="kpi-line line-one" /></div>
-            <div><small>À encaisser</small><strong>3 240 DH</strong><i className="kpi-line line-two" /></div>
-          </div>
-          <div className="mock-chart">
-            <span className="chart-bar h45" /><span className="chart-bar h65" />
-            <span className="chart-bar h50" /><span className="chart-bar h85" />
-            <span className="chart-bar h60" /><span className="chart-bar h100" />
-            <span className="chart-bar h72" /><span className="chart-bar h90" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-  if (type === "travel") {
-    return (
-      <div className="preview-window travel-window">
-        <div className="travel-nav"><span>m<span>●</span>safer</span><span>Explorer &nbsp; Destinations &nbsp; <b>Mes voyages</b></span><i>H</i></div>
-        <div className="travel-image">
-          <span>✳ &nbsp; LE MAROC VOUS ATTEND</span>
-          <strong>Le voyage<br />commence ici.</strong>
-          <span className="travel-search">⌕ &nbsp; Où souhaitez-vous partir ? <b>Explorer ↗</b></span>
-        </div>
-        <div className="travel-caption"><span>DESTINATIONS À DÉCOUVRIR</span><b>Voir les destinations &nbsp; ↗</b></div>
-      </div>
-    );
-  }
-  if (type === "stay") {
-    return (
-      <div className="preview-window stay-window">
-        <div className="stay-nav"><span>dar<span>✳</span>booking</span><span>Logements &nbsp; Séjours &nbsp; À propos</span><b>♡ &nbsp; Connexion</b></div>
-        <div className="stay-photo">
-          <span className="stay-pill">VOTRE PROCHAIN SÉJOUR</span>
-          <strong>Le Maroc,<br />comme chez vous.</strong>
-          <span className="stay-search"><span>⌖ &nbsp; Où partir ?</span><span>▦ &nbsp; Dates</span><b>⌕</b></span>
-        </div>
-        <div className="stay-caption"><span>DES LOGEMENTS SÉLECTIONNÉS</span><b>Voir les logements &nbsp; ↗</b></div>
-      </div>
-    );
-  }
-  return (
-    <div className="preview-window food-window">
-      <div className="food-nav"><span><i>g</i> gourmet<span>express</span></span><b>Découvrir &nbsp; Menu &nbsp; À propos</b><i className="food-cart">◒</i></div>
-      <div className="food-body">
-        <div className="food-copy">
-          <span className="food-overline">FRAIS, PRÉPARÉ AVEC SOIN</span>
-          <strong>Bon goût.<br />Bonne humeur.</strong>
-          <span>Vos plats préférés, livrés chez vous.</span>
-          <b>Commander &nbsp; ↗</b>
-        </div>
-        <div className="food-art"><span>✳</span><i>✿</i><b>BON<br />GOÛT</b><small>PRÉPARÉ SUR PLACE</small></div>
-      </div>
-      <div className="food-footer"><span>✳ &nbsp; Produits frais</span><span>↗ &nbsp; Livraison rapide</span><span>♡ &nbsp; Fait avec soin</span></div>
-    </div>
-  );
+  if (image) return (<div className="preview-window custom-image-window"><img src={image} alt={name} className="custom-project-img" /></div>);
+  if (type === "finance") return (<div className="preview-window finance-window"><div className="mock-sidebar"><span className="mock-logo"><span>c.</span> comptalink</span><span className="mock-side-active">▦ Tableau de bord</span><span>▤ Factures</span><span>↔ Dépenses</span><span>◷ Rapports</span></div><div className="mock-main finance-main"><div className="mock-heading">Bonjour, Hossam <span>☀</span></div><div className="mock-kpis"><div><small>Chiffre d&apos;affaires</small><strong>24 680 DH</strong><i className="kpi-line line-one" /></div><div><small>À encaisser</small><strong>3 240 DH</strong><i className="kpi-line line-two" /></div></div><div className="mock-chart"><span className="chart-bar h45" /><span className="chart-bar h65" /><span className="chart-bar h50" /><span className="chart-bar h85" /><span className="chart-bar h60" /><span className="chart-bar h100" /><span className="chart-bar h72" /><span className="chart-bar h90" /></div></div></div>);
+  if (type === "travel") return (<div className="preview-window travel-window"><div className="travel-nav"><span>m<span>●</span>safer</span><span>Explorer Destinations <b>Mes voyages</b></span><i>H</i></div><div className="travel-image"><span>✳ LE MAROC VOUS ATTEND</span><strong>Le voyage<br />commence ici.</strong><span className="travel-search">⌕ Où souhaitez-vous partir ? <b>Explorer ↗</b></span></div><div className="travel-caption"><span>DESTINATIONS À DÉCOUVRIR</span><b>Voir les destinations ↗</b></div></div>);
+  if (type === "stay") return (<div className="preview-window stay-window"><div className="stay-nav"><span>dar<span>✳</span>booking</span><span>Logements Séjours À propos</span><b>♡ Connexion</b></div><div className="stay-photo"><span className="stay-pill">VOTRE PROCHAIN SÉJOUR</span><strong>Le Maroc,<br />comme chez vous.</strong><span className="stay-search"><span>⌖ Où partir ?</span><span>▦ Dates</span><b>⌕</b></span></div><div className="stay-caption"><span>DES LOGEMENTS SÉLECTIONNÉS</span><b>Voir les logements ↗</b></div></div>);
+  return (<div className="preview-window food-window"><div className="food-nav"><span><i>g</i> gourmet<span>express</span></span><b>Découvrir Menu À propos</b><i className="food-cart">◒</i></div><div className="food-body"><div className="food-copy"><span className="food-overline">FRAIS, PRÉPARÉ AVEC SOIN</span><strong>Bon goût.<br />Bonne humeur.</strong><span>Vos plats préférés, livrés chez vous.</span><b>Commander ↗</b></div><div className="food-art"><span>✳</span><i>✿</i><b>BON<br />GOÛT</b><small>PRÉPARÉ SUR PLACE</small></div></div><div className="food-footer"><span>✳ Produits frais</span><span>↗ Livraison rapide</span><span>♡ Fait avec soin</span></div></div>);
 }
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lang, setLang] = useState("fr");
+  const [dark, setDark] = useState(true);
+  const t = texts[lang];
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+    window.location.href = `mailto:bhoussam264@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    setSent(true);
+  };
+
+  // ===== FONCTION TELECHARGEMENT CV =====
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/CV.pdf";
+    link.download = "CV-Hossam-Bakkar.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    closeMenu();
+  };
 
   useEffect(() => {
     const revealItems = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return undefined;
-    }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 },
-    );
+    if (!("IntersectionObserver" in window)) { revealItems.forEach((item) => item.classList.add("is-visible")); return undefined; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.12 });
     revealItems.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+  const inputStyle = { padding: "14px", borderRadius: "12px", border: "1px solid #e5e0d5", background: dark ? "#222" : "#fff", color: dark ? "#fff" : "#111", outline: "none", width: "100%", boxSizing: "border-box" };
+  const linkStyle = { display: "flex", alignItems: "center", gap: "12px", padding: "13px 16px", background: dark ? "#222" : "#fff", border: "1px solid #e5e0d5", borderRadius: "14px", textDecoration: "none", color: dark ? "#fff" : "#111", fontWeight: "600" };
+  const linkSmall = { marginLeft: "auto", fontWeight: "400", fontSize: "12px", opacity: 0.6, wordBreak: "break-all", textAlign: "right" };
 
   return (
-    <main className="min-h-screen">
+    <main className={dark ? "min-h-screen dark-mode" : "min-h-screen light-mode"}>
       <header className="site-header">
-        <nav className="nav-shell" aria-label="Navigation principale">
-          <a className="brand" href="#home" onClick={closeMenu} aria-label="Accueil — Hossam Bakkar">
-            <span className="brand-monogram">HB<span>.</span></span>
-          </a>
-          <button
-            className="mobile-menu-button"
-            type="button"
-            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+        <nav className="nav-shell">
+          <a className="brand" href="#home" onClick={closeMenu}><span className="brand-monogram">HB<span>.</span></span></a>
+          <button className="mobile-menu-button" type="button" onClick={() => setMenuOpen((o) => !o)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
           <div className={`nav-content${menuOpen ? " nav-content-open" : ""}`}>
             <div className="nav-links">
-              <a href="#home" onClick={closeMenu}>Accueil</a>
-              <a href="#projects" onClick={closeMenu}>Projets</a>
-              <a href="#skills" onClick={closeMenu}>Compétences</a>
-              <a href="#contact" onClick={closeMenu}>Contact</a>
+              <a href="#home" onClick={closeMenu}>{t.navHome}</a>
+              <a href="#projects" onClick={closeMenu}>{t.navProjects}</a>
+              <a href="#skills" onClick={closeMenu}>{t.navSkills}</a>
+              <a href="#contact" onClick={closeMenu}>{t.navContact}</a>
             </div>
-            <a className="nav-cv" href="#contact" onClick={closeMenu}>Me recruter <ArrowUpRight size={15} /></a>
+            <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+              <button className="lang-btn" onClick={() => setLang(lang === "fr" ? "en" : "fr")} style={{ padding: "8px 14px", borderRadius: "20px", border: "1px solid #ddd", background: "#fff", color: "#111", cursor: "pointer", fontWeight: "bold" }}>
+                {lang === "fr" ? "🇫🇷 FR | EN" : "🇬🇧 EN | FR"}
+              </button>
+              <button onClick={() => setDark(!dark)} style={{ padding: "8px 12px", borderRadius: "50%", border: "1px solid #ddd", background: dark ? "#fff" : "#111", color: dark ? "#111" : "#fff", cursor: "pointer", display: "flex", alignItems: "center" }}>
+                {dark ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+              {/* BOUTON MON CV - TELECHARGE DIRECT */}
+              <button className="nav-cv" onClick={handleDownloadCV} style={{ cursor: "pointer", border: "none", color: "#fff" }}>{t.navCV} <ArrowDownRight size={15} /></button>
+              <a className="nav-cv" href="#contact" onClick={closeMenu} style={{ background: "#22c55e", color: "#fff" }}>{t.navHire} <ArrowUpRight size={15} /></a>
+            </div>
           </div>
         </nav>
       </header>
@@ -216,41 +168,33 @@ function App() {
       <section className="hero" id="home">
         <div className="hero-inner hero-with-photo">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="status-dot" /> DISPONIBLE POUR UN STAGE OU UN FREELANCE</div>
-            <p className="hero-role">FULL STACK DEVELOPER · EL JADIDA, MAROC</p>
-            <h1>Bonjour,<br />je suis <span>Hossam Bakkar.</span></h1>
-            <p className="hero-description">
-              Je transforme vos idées en applications web complètes, de la conception au déploiement.
-            </p>
+            <div className="eyebrow"><span className="status-dot" /> {t.available}</div>
+            <p className="hero-role">{t.role}</p>
+            <h1>{t.hello}<br />{t.iam} <span>Hossam Bakkar.</span></h1>
+            <p className="hero-description">{t.desc}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#projects">
-                Voir mes projets <ArrowRight size={16} />
-              </a>
-              <a className="button button-outline" href="mailto:bhoussam264@gmail.com">
-                <Mail size={15} /> Me contacter
-              </a>
+              <a className="button button-primary" href="#projects">{t.seeProjects} <ArrowRight size={16} /></a>
+              <a className="button button-outline" href="mailto:bhoussam264@gmail.com"><Mail size={15} /> {t.contactMe}</a>
+              <button className="button button-outline" onClick={handleDownloadCV} style={{ cursor: "pointer" }}>⬇️ {t.navCV}</button>
             </div>
             <div className="stats">
-              <div><b>{String(projects.length).padStart(2, "0")}</b><span>Projets réalisés</span></div>
-              <div><b>10+</b><span>Technologies</span></div>
-              <div><b>100%</b><span>Motivation</span></div>
+              <div><b>{String(projects.length).padStart(2, "0")}</b><span>{t.projectsDone}</span></div>
+              <div><b>10+</b><span>{t.techs}</span></div>
+              <div><b>100%</b><span>{t.motivation}</span></div>
             </div>
           </div>
-
-          {/* ===== TA PHOTO DE PROFIL ===== */}
           <div className="hero-photo-wrap">
-            <img src="/Monimg.png" alt="Hossam Bakkar" className="hero-photo" />
+            <img src="/portPholoi.jpg" alt="Hossam Bakkar" className="hero-photo" />
             <span className="hero-photo-badge">👋 Disponible</span>
             <span className="hero-photo-glow"></span>
           </div>
-
         </div>
       </section>
 
       <section className="projects-section section-shell" id="projects">
         <div className="section-topline reveal">
-          <div><span className="section-number">01 / PROJETS SÉLECTIONNÉS</span><h2>Mes <span>projets.</span></h2></div>
-          <span className="section-aside">DES SOLUTIONS PENSÉES POUR LE MAROC. <ArrowDownRight size={16} /></span>
+          <div><span className="section-number">{t.projectsLabel}</span><h2>{t.myProjects} <span>{t.projectsDot}</span></h2></div>
+          <span className="section-aside">{t.projectsAside} <ArrowDownRight size={16} /></span>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
@@ -258,23 +202,13 @@ function App() {
               <div className={`project-preview preview-${project.type}`}>
                 <ProjectPreview type={project.type} image={project.image} name={project.name} />
                 <span className="project-index">{project.index}</span>
-                {project.href ? (
-                  <a className="project-open" href={project.href} target="_blank" rel="noreferrer" aria-label={`Voir le projet ${project.name} dans un nouvel onglet`}><ArrowUpRight size={18} /></a>
-                ) : (
-                  <span className="project-open project-private" title="Aucun lien de démonstration fourni" aria-label="Aucun lien de démonstration fourni"><ArrowUpRight size={18} /></span>
-                )}
+                {project.href ? (<a className="project-open" href={project.href} target="_blank" rel="noreferrer"><ArrowUpRight size={18} /></a>) : (<span className="project-open project-private"><ArrowUpRight size={18} /></span>)}
               </div>
               <div className="project-info">
-                <div className="project-title-row">
-                  <h3><span className={`project-marker marker-${project.accent}`} aria-hidden="true">{project.marker}</span>{project.title}</h3>
-                  <span className="project-category">{project.category}</span>
-                </div>
+                <div className="project-title-row"><h3><span className={`project-marker marker-${project.accent}`}>{project.marker}</span>{project.title}</h3><span className="project-category">{project.category}</span></div>
                 <p>{project.description}</p>
                 {project.detail && <p className="project-detail">{project.detail} <span>(commission de 10 %)</span></p>}
-                <div className="project-tags">
-                  {project.stack.map((tag) => <span key={tag}>{tag}</span>)}
-                  {project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Voir ${project.name}`}><ArrowUpRight size={14} /></a>}
-                </div>
+                <div className="project-tags">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}{project.href && <a href={project.href} target="_blank" rel="noreferrer"><ArrowUpRight size={14} /></a>}</div>
               </div>
             </article>
           ))}
@@ -283,34 +217,44 @@ function App() {
 
       <section className="skills-section section-shell" id="skills">
         <div className="section-topline reveal">
-          <div><span className="section-number">02 / SAVOIR-FAIRE</span><h2>Mes <span>compétences.</span></h2></div>
-          <span className="section-aside">11 TECHNOLOGIES &amp; OUTILS <Layers3 size={16} /></span>
+          <div><span className="section-number">{t.skillsLabel}</span><h2>{t.mySkills} <span>{t.skillsDot}</span></h2></div>
+          <span className="section-aside">{t.skillsAside} <Layers3 size={16} /></span>
         </div>
-        <div className="skills-grid">
-          {skills.map((skill) => (
-            <div className="skill-item" key={skill.label}>
-              <span className={`skill-symbol skill-${skill.color}`}>{skill.symbol}</span>
-              <span className="skill-label">{skill.label}</span>
-            </div>
-          ))}
-        </div>
+        <div className="skills-grid">{skills.map((skill) => (<div className="skill-item" key={skill.label}><span className={`skill-symbol skill-${skill.color}`}>{skill.symbol}</span><span className="skill-label">{skill.label}</span></div>))}</div>
       </section>
 
       <footer className="contact-section section-shell" id="contact">
         <div className="contact-panel reveal">
           <div className="contact-ornament contact-ornament-one" />
           <div className="contact-ornament contact-ornament-two" />
-          <div className="contact-content">
-            <div className="contact-label"><span className="status-dot" /> DISPONIBLE POUR VOTRE PROCHAIN PROJET</div>
-            <span className="section-number">03 / CONTACT</span>
-            <h2>Travaillons<br /><span>ensemble ?</span></h2>
-            <p>Un projet, une offre de stage ? Parlons-en.</p>
-            <a className="button contact-button" href="mailto:bhoussam264@gmail.com?subject=Parlons%20de%20votre%20projet">
-              <Mail size={15} /> bhoussam264@gmail.com <ArrowUpRight size={16} />
-            </a>
-            <div className="contact-details">
-              <a href="https://wa.me/212635065313" target="_blank" rel="noreferrer">WhatsApp&nbsp; : 0635065313</a>
-              <span>El Jadida, Maroc</span>
+          <div className="contact-content" style={{ width: "100%", maxWidth: "1000px", margin: "0 auto" }}>
+            <div className="contact-label"><span className="status-dot" /> {t.contactLabel}</div>
+            <span className="section-number">{t.contactNum}</span>
+            <h2>{t.workTogether}<br /><span>{t.together}</span></h2>
+            <p>{t.contactDesc}</p>
+            <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "25px", marginTop: "25px", alignItems: "start" }}>
+              <form onSubmit={handleContact} style={{ display: "flex", flexDirection: "column", gap: "12px", textAlign: "left", minWidth: 0 }}>
+                <label>{t.name}</label>
+                <input required value={name} onChange={(e) => setName(e.target.value)} placeholder={t.namePh} style={inputStyle} />
+                <label>{t.email}</label>
+                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="votre@email.com" style={inputStyle} />
+                <label>{t.subject}</label>
+                <input required value={subject} onChange={(e) => setSubject(e.target.value)} placeholder={t.subjectPh} style={inputStyle} />
+                <label>{t.message}</label>
+                <textarea required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} placeholder={t.messagePh} style={{ ...inputStyle, resize: "vertical" }} />
+                <button type="submit" className="button button-primary" style={{ justifyContent: "center", marginTop: "6px" }}>{t.send} <ArrowUpRight size={16} /></button>
+                {sent && <p style={{ color: "green", fontSize: "14px" }}>{t.sentMsg}</p>}
+              </form>
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px", minWidth: 0 }}>
+                <h3 style={{ fontSize: "16px", marginBottom: "4px" }}>{t.findMe}</h3>
+                <a href="mailto:bhoussam264@gmail.com" style={linkStyle}><span style={{ background: "#fee2e2", padding: "8px", borderRadius: "10px", display: "flex", flexShrink: 0 }}><Mail size={18} color="#e11d48" /></span>Email <span style={linkSmall}>bhoussam264@gmail.com ↗</span></a>
+                <a href="https://wa.me/212635065313" target="_blank" rel="noreferrer" style={linkStyle}><span style={{ background: "#dcfce7", padding: "8px", borderRadius: "10px", display: "flex", flexShrink: 0 }}><MessageCircle size={18} color="#16a34a" /></span>WhatsApp <span style={linkSmall}>0635065313 ↗</span></a>
+                <a href="https://github.com/HossamBakkar" target="_blank" rel="noreferrer" style={linkStyle}><span style={{ background: "#f3f4f6", padding: "8px", borderRadius: "10px", display: "flex", flexShrink: 0 }}><Github size={18} color="#000" /></span>GitHub <span style={linkSmall}>@HossamBakkar ↗</span></a>
+                <a href="https://instagram.com/hossam.bakkar" target="_blank" rel="noreferrer" style={linkStyle}><span style={{ background: "#fce7f3", padding: "8px", borderRadius: "10px", display: "flex", flexShrink: 0 }}><Instagram size={18} color="#db2777" /></span>Instagram <span style={linkSmall}>@hossam.bakkar ↗</span></a>
+                <a href="https://linkedin.com/in/hossambakkar" target="_blank" rel="noreferrer" style={linkStyle}><span style={{ background: "#dbeafe", padding: "8px", borderRadius: "10px", display: "flex", flexShrink: 0 }}><Linkedin size={18} color="#2563eb" /></span>LinkedIn <span style={linkSmall}>Hossam Bakkar ↗</span></a>
+                <div style={{ background: "#111", color: "#fff", padding: "14px", borderRadius: "14px", fontSize: "13px", textAlign: "center" }}>{t.availableBox}</div>
+                <button onClick={handleDownloadCV} style={{ padding: "14px", borderRadius: "14px", border: "none", background: "#00a878", color: "#fff", fontWeight: "bold", cursor: "pointer", fontSize: "14px" }}>{t.downloadCV}</button>
+              </div>
             </div>
           </div>
           <span className="contact-big-arrow"><ArrowUpRight /></span>
@@ -318,12 +262,8 @@ function App() {
         </div>
         <div className="footer-bottom">
           <a className="brand footer-brand" href="#home"><span className="brand-monogram">HB<span>.</span></span></a>
-          <span>© {new Date().getFullYear()} HOSSAM BAKKAR. TOUS DROITS RÉSERVÉS.</span>
-          <div className="footer-links">
-            <a href="#home">ACCUEIL <ArrowUpRight size={13} /></a>
-            <a href="#projects">PROJETS <ArrowUpRight size={13} /></a>
-            <a href="#contact">CONTACT <ArrowUpRight size={13} /></a>
-          </div>
+          <span>© {new Date().getFullYear()} HOSSAM BAKKAR. {t.footerRights}</span>
+          <div className="footer-links"><a href="#home">{t.navHome.toUpperCase()} <ArrowUpRight size={13} /></a><a href="#projects">{t.navProjects.toUpperCase()} <ArrowUpRight size={13} /></a><a href="#contact">{t.navContact.toUpperCase()} <ArrowUpRight size={13} /></a></div>
         </div>
       </footer>
     </main>
