@@ -28,7 +28,8 @@ const texts = {
     projectsLabel: "01 / PROJETS SÉLECTIONNÉS", myProjects: "Mes", projectsDot: "projets.",
     projectsAside: "DES SOLUTIONS PENSÉES POUR LE MAROC.",
     skillsLabel: "02 / SAVOIR-FAIRE", mySkills: "Mes", skillsDot: "compétences.",
-    skillsAside: "11 TECHNOLOGIES & OUTILS",
+    skillsAside: "15 TECHNOLOGIES & OUTILS",
+    filterAll: "Tous", filterFrontend: "Front-End", filterBackend: "Back-End", filterTools: "Outils",
     contactLabel: "DISPONIBLE POUR VOTRE PROCHAIN PROJET", contactNum: "03 / CONTACT",
     workTogether: "Travaillons", together: "ensemble ?",
     contactDesc: "Un projet, une offre de stage ? Parlons-en.",
@@ -52,7 +53,8 @@ const texts = {
     projectsLabel: "01 / SELECTED PROJECTS", myProjects: "My", projectsDot: "projects.",
     projectsAside: "SOLUTIONS BUILT FOR MOROCCO.",
     skillsLabel: "02 / EXPERTISE", mySkills: "My", skillsDot: "skills.",
-    skillsAside: "11 TECHNOLOGIES & TOOLS",
+    skillsAside: "15 TECHNOLOGIES & TOOLS",
+    filterAll: "All", filterFrontend: "Front-End", filterBackend: "Back-End", filterTools: "Tools",
     contactLabel: "AVAILABLE FOR YOUR NEXT PROJECT", contactNum: "03 / CONTACT",
     workTogether: "Let's work", together: "together ?",
     contactDesc: "A project, an internship offer ? Let's talk.",
@@ -68,23 +70,27 @@ const texts = {
 
 const projects = [
   { name: "ComptaLink", title: "ComptaLink — Gestion comptable", category: "La comptabilité, en toute clarté.", description: "La gestion des factures, clients et dépenses des petites entreprises marocaines, avec tableaux de bord et exports.", stack: ["React", "Laravel", "MySQL"], href: "https://comptalink-olive.vercel.app", image: "/combtalink.png", type: "finance", index: "01", marker: "🧾", accent: "blue" },
-  { name: "DarBooking", title: "DarBooking — Réservation de logements", category: "Des séjours, en toute simplicité.", description: "Une plateforme marocaine de réservation avec recherche par ville et dates, réservation en deux clics et messagerie intégrée.", stack: ["React", "Laravel", "MySQL"], detail: "5 nuits × 400 DH = 2 000 DH · Propriétaire : 1 800 DH", href: "", type: "stay", index: "02", marker: "🏠", accent: "green" },
+  { name: "CourParcFlow", title: "CourParcFlow — Gestion du parc informatique", category: "Le parc informatique, en toute maîtrise.", description: "La gestion des ordinateurs, employés, affectations, pannes et maintenances de la Cour d'Appel, avec tableau de bord et suivi en temps réel.", stack: ["Base44", "React", "Tailwind CSS"], href: "https://cour-parc-flow.base44.app", image: "/CDbl.png", type: "gestion", index: "02", marker: "💻", accent: "indigo" },
   { name: "Gourmet Express", title: "Gourmet Express — Livraison de repas", category: "Vos envies, livrées chez vous.", description: "Une application de commande et de livraison de repas, avec menu, panier et suivi des commandes en temps réel.", stack: ["React", "PHP", "MySQL"], href: "https://resto-hossam.vercel.app", image: "/Screenshot 2026-11-25 165542.png", type: "food", index: "03", marker: "🍔", accent: "orange" },
   { name: "CoVoyageMaroc", title: "Msafer — Voyage au Maroc", category: "Le Maroc comme prochaine destination.", description: "Une plateforme pour explorer les destinations marocaines et organiser des voyages inoubliables.", stack: ["React", "Laravel", "API"], href: "https://maroc-route-partage.base44.app", image: "/Voiyage.png", type: "travel", index: "04", marker: "✈️", accent: "purple" },
 ];
 
 const skills = [
-  { label: "React", symbol: "⚛", color: "react" },
-  { label: "Vite", symbol: "V", color: "vite" },
-  { label: "Tailwind CSS", symbol: "≈", color: "tailwind" },
-  { label: "JavaScript", symbol: "JS", color: "js" },
-  { label: "Laravel", symbol: "L", color: "laravel" },
-  { label: "PHP", symbol: "php", color: "php" },
-  { label: "MySQL", symbol: "▤", color: "mysql" },
-  { label: "API REST", symbol: "{ }", color: "api" },
-  { label: "Bootstrap", symbol: "B", color: "bootstrap" },
-  { label: "Git / GitHub", symbol: "GH", color: "github" },
-  { label: "Figma", symbol: "◈", color: "figma" },
+  { label: "React", symbol: "⚛", color: "react", category: "frontend", desc: "Création d'interfaces dynamiques et modernes.", tags: ["Front-End", "UI"] },
+  { label: "Laravel", symbol: "L", color: "laravel", category: "backend", desc: "Développement Back-End et applications CRUD.", tags: ["Back-End", "PHP"] },
+  { label: "JavaScript", symbol: "JS", color: "js", category: "frontend", desc: "Logique interactive et applications web complètes.", tags: ["Front-End", "Web"] },
+  { label: "PHP", symbol: "php", color: "php", category: "backend", desc: "Développement Back-End et gestion des données.", tags: ["Back-End", "Web"] },
+  { label: "Python", symbol: "🐍", color: "python", category: "backend", desc: "Développement d'applications et scripts avec Python.", tags: ["Back-End", "Script"] },
+  { label: "MySQL", symbol: "▤", color: "mysql", category: "backend", desc: "Conception et gestion de bases de données.", tags: ["Base de données"] },
+  { label: "API REST", symbol: "{ }", color: "api", category: "backend", desc: "Création et sécurisation d'API REST.", tags: ["API", "Sécurité"] },
+  { label: "Tailwind CSS", symbol: "≈", color: "tailwind", category: "frontend", desc: "Design rapide et responsive.", tags: ["Design", "CSS"] },
+  { label: "Bootstrap", symbol: "B", color: "bootstrap", category: "frontend", desc: "Mise en page rapide et responsive.", tags: ["Design", "CSS"] },
+  { label: "Vite", symbol: "V", color: "vite", category: "tools", desc: "Outil rapide pour les projets React.", tags: ["Outil", "React"] },
+  { label: "Git / GitHub", symbol: "GH", color: "github", category: "tools", desc: "Gestion des versions et travail en équipe.", tags: ["Versioning", "Équipe"] },
+  { label: "Figma", symbol: "◈", color: "figma", category: "tools", desc: "Maquettes et conception d'interfaces.", tags: ["Design", "UI"] },
+  { label: "API Sécurisée", symbol: "🔒", color: "laravel", category: "backend", desc: "API protégée et bonnes pratiques.", tags: ["Sécurité", "API"] },
+  { label: "Déploiement", symbol: "🚀", color: "vite", category: "tools", desc: "Déploiement sur serveur ou machine virtuelle.", tags: ["Serveur", "VM"] },
+  { label: "Travail en équipe", symbol: "👥", color: "github", category: "tools", desc: "Communication professionnelle et collaboration.", tags: ["Soft Skill"] },
 ];
 
 function ProjectPreview({ type, image, name }) {
@@ -99,6 +105,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState("fr");
   const [dark, setDark] = useState(true);
+  const [filter, setFilter] = useState("all");
   const t = texts[lang];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -113,7 +120,6 @@ function App() {
     setSent(true);
   };
 
-  // ===== FONCTION TELECHARGEMENT CV =====
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/CV.pdf";
@@ -124,18 +130,38 @@ function App() {
     closeMenu();
   };
 
+  // FIX: kay-3awed y-khdem mli filter kay-tbeddel
   useEffect(() => {
     const revealItems = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window)) { revealItems.forEach((item) => item.classList.add("is-visible")); return undefined; }
     const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.12 });
     revealItems.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
-  }, []);
+  }, [filter]);
 
   const closeMenu = () => setMenuOpen(false);
   const inputStyle = { padding: "14px", borderRadius: "12px", border: "1px solid #e5e0d5", background: dark ? "#222" : "#fff", color: dark ? "#fff" : "#111", outline: "none", width: "100%", boxSizing: "border-box" };
   const linkStyle = { display: "flex", alignItems: "center", gap: "12px", padding: "13px 16px", background: dark ? "#222" : "#fff", border: "1px solid #e5e0d5", borderRadius: "14px", textDecoration: "none", color: dark ? "#fff" : "#111", fontWeight: "600" };
   const linkSmall = { marginLeft: "auto", fontWeight: "400", fontSize: "12px", opacity: 0.6, wordBreak: "break-all", textAlign: "right" };
+
+  const cardStyle = {
+    border: dark ? "1px solid #333" : "1px solid #e5e0d5",
+    borderRadius: "16px",
+    background: dark ? "#1a1a1a" : "#fff",
+    overflow: "hidden",
+  };
+
+  const filteredSkills = filter === "all" ? skills : skills.filter((s) => s.category === filter);
+  const filterBtn = (value) => ({
+    padding: "9px 18px",
+    borderRadius: "20px",
+    border: "1px solid #e5e0d5",
+    background: filter === value ? "#00a878" : dark ? "#222" : "#fff",
+    color: filter === value ? "#fff" : dark ? "#fff" : "#111",
+    cursor: "pointer",
+    fontWeight: "700",
+    fontSize: "14px",
+  });
 
   return (
     <main className={dark ? "min-h-screen dark-mode" : "min-h-screen light-mode"}>
@@ -157,7 +183,6 @@ function App() {
               <button onClick={() => setDark(!dark)} style={{ padding: "8px 12px", borderRadius: "50%", border: "1px solid #ddd", background: dark ? "#fff" : "#111", color: dark ? "#111" : "#fff", cursor: "pointer", display: "flex", alignItems: "center" }}>
                 {dark ? <Sun size={16} /> : <Moon size={16} />}
               </button>
-              {/* BOUTON MON CV - TELECHARGE DIRECT */}
               <button className="nav-cv" onClick={handleDownloadCV} style={{ cursor: "pointer", border: "none", color: "#fff" }}>{t.navCV} <ArrowDownRight size={15} /></button>
               <a className="nav-cv" href="#contact" onClick={closeMenu} style={{ background: "#22c55e", color: "#fff" }}>{t.navHire} <ArrowUpRight size={15} /></a>
             </div>
@@ -184,7 +209,7 @@ function App() {
             </div>
           </div>
           <div className="hero-photo-wrap">
-            <img src="/portPholoi.jpg" alt="Hossam Bakkar" className="hero-photo" />
+            <img src="/MonBc.jpg" alt="Hossam Bakkar" className="hero-photo" />
             <span className="hero-photo-badge">👋 Disponible</span>
             <span className="hero-photo-glow"></span>
           </div>
@@ -198,7 +223,7 @@ function App() {
         </div>
         <div className="project-grid">
           {projects.map((project) => (
-            <article className="project-card reveal" key={project.name}>
+            <article className="project-card reveal" key={project.name} style={cardStyle}>
               <div className={`project-preview preview-${project.type}`}>
                 <ProjectPreview type={project.type} image={project.image} name={project.name} />
                 <span className="project-index">{project.index}</span>
@@ -220,7 +245,29 @@ function App() {
           <div><span className="section-number">{t.skillsLabel}</span><h2>{t.mySkills} <span>{t.skillsDot}</span></h2></div>
           <span className="section-aside">{t.skillsAside} <Layers3 size={16} /></span>
         </div>
-        <div className="skills-grid">{skills.map((skill) => (<div className="skill-item" key={skill.label}><span className={`skill-symbol skill-${skill.color}`}>{skill.symbol}</span><span className="skill-label">{skill.label}</span></div>))}</div>
+
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", margin: "20px 0 25px" }}>
+          <button style={filterBtn("all")} onClick={() => setFilter("all")}>{t.filterAll}</button>
+          <button style={filterBtn("frontend")} onClick={() => setFilter("frontend")}>{t.filterFrontend}</button>
+          <button style={filterBtn("backend")} onClick={() => setFilter("backend")}>{t.filterBackend}</button>
+          <button style={filterBtn("tools")} onClick={() => setFilter("tools")}>{t.filterTools}</button>
+        </div>
+
+        {/* FIX: 7ayedt "reveal" men hna bach filter y-khdem */}
+        <div className="project-grid" key={filter}>
+          {filteredSkills.map((skill) => (
+            <article className="project-card" key={skill.label} style={cardStyle}>
+              <div style={{ height: "120px", display: "flex", alignItems: "center", justifyContent: "center", background: dark ? "#222" : "#f8f8f8", fontSize: "48px" }}>
+                <span className={`skill-symbol skill-${skill.color}`} style={{ fontSize: "48px" }}>{skill.symbol}</span>
+              </div>
+              <div className="project-info">
+                <div className="project-title-row"><h3>{skill.label}</h3></div>
+                <p>{skill.desc}</p>
+                <div className="project-tags">{skill.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <footer className="contact-section section-shell" id="contact">
